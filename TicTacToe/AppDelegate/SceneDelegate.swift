@@ -10,7 +10,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = TicTacToeViewController()
+        
+        let interfaceColor = scoreBackGroundColor
+        
+        let navigationController = UINavigationController(rootViewController: TicTacToeViewController())
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: interfaceColor]
+        
+        window?.tintColor = interfaceColor
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }
