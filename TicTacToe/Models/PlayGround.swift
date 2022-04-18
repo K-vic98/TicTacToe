@@ -22,12 +22,12 @@ final class PlayGround
     private(set) var zeroesScore = 0
     private(set) var currentPlayer = GameRole.zero
     
-    public func toggleCurrentState()
+    func toggleCurrentState()
     {
         currentPlayer.toggle()
     }
     
-    public func increaseScoreCount()
+    func increaseScoreCount()
     {
         if currentPlayer == .cross
         {
@@ -39,7 +39,7 @@ final class PlayGround
         }
     }
     
-    public func fixateCell(index: Int)
+    func fixateCell(index: Int)
     {
         if currentPlayer == .cross
         {
@@ -51,13 +51,13 @@ final class PlayGround
         }
     }
     
-    public func clear()
+    func clear()
     {
         crosses.removeAll()
         zeroes.removeAll()
     }
     
-    public func сheckWin() -> GameRole?
+    func сheckWin() -> GameRole?
     {
         var winner: GameRole?
         
@@ -78,7 +78,7 @@ final class PlayGround
         return winner
     }
     
-    public func checkGameOver() -> Bool
+    func checkGameOver() -> Bool
     {
         guard crosses.count + zeroes.count == cellCount else
         {

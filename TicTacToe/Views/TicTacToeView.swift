@@ -39,7 +39,7 @@ final class TicTacToeView : UIView
     
     // MARK: - View update
     
-    @objc public func cellPressed(cell: UIButton?)
+    @objc private func cellPressed(cell: UIButton?)
     {
         guard let safeCell = cell else
         {
@@ -49,13 +49,13 @@ final class TicTacToeView : UIView
         cellClickHandler?.handleCellClick(cellIndex: safeCell.tag)
     }
     
-    public func updateCell(cellIndex: Int, state: String)
+    func updateCell(cellIndex: Int, state: String)
     {
         cells[cellIndex].setTitle(state, for: .normal)
         cells[cellIndex].isEnabled = false
     }
     
-    public func clearCells()
+    func clearCells()
     {
         for cell in cells
         {
@@ -64,7 +64,7 @@ final class TicTacToeView : UIView
         }
     }
     
-    public func changeScores(zero: String, cross: String)
+    func changeScores(zero: String, cross: String)
     {
         zeroScore.text = zero
         crossScore.text = cross
