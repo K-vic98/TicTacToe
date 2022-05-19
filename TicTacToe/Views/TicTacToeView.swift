@@ -105,6 +105,7 @@ final class TicTacToeView : UIView
                 cellIndex += 1
                 
                 cells.append(cell)
+                cell.aspectRatio(1)
                 
                 playGroundLine.addArrangedSubview(cell)
             }
